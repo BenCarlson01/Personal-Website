@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Benjamin Carlson</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            body {
+                background-image: url("/images/cloud.jpg");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .tablink {
+                background-color: #555;
+                color: white;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                font-size: 17px;
+                width: 25%;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                color: white;
+                display: none;
+                padding: 50px;
+                text-align: center;
+            }
+
+            #London {background-color:red;}
+            #Paris {background-color:green;}
+            #Tokyo {background-color:blue;}
+            #Oslo {background-color:orange;}
+
+            /* Split the screen in half */
+            .split {
+              height: 100%;
+              width: 50%;
+              position: fixed;
+              z-index: 1;
+              top: 0;
+              overflow-x: hidden;
+              padding-top: 20px;
+            }
+
+            /* Control the left side */
+            .left {
+              left: 0;
+            }
+
+            /* Control the right side */
+            .right {
+              right: 0;
+            }
+
+            /* If you want the content centered horizontally and vertically */
+            .centered {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+            }
+
+            /* Style the image inside the centered container, if needed */
+            .centered img {
+              width: 150px;
+              /* border-radius: 50%; */
+            }
+        </style>
+    </head>
+    <body>      
+        <button class="tablink" onclick="openPage()" id="defaultOpen">London</button>
+        <button class="tablink" onclick="openPage()">Paris</button>
+        <button class="tablink" onclick="openPage()">Tokyo</button>
+        <button class="tablink" onclick="openPage()">Oslo</button>
+
+        <div style="width: 100%;">
+               <div style="float:left; width: 50%">
+                    <img src="/images/personal_picture.jpeg" alt="Me!" style="width:336px;height:504px;border:0;">
+               </div>
+               <div style="float:left;">
+                    Hi! This is the location of my future personal website! <br>
+                    It's a current work in progress, but check back in a week or so and it should be partially up!
+               </div>
+        </div>
+        <div style="clear:both"></div>
+
+        <center>
+            <a href="https://www.github.com/bencarlson01">
+                <img src="/images/github.png" alt="GitHub Link" style="width:50px;height:50px;border:0;">
+            </a> 
+            <a href="https://www.linkedin.com/in/bencarlson01">
+                <img src="/images/linkedin.png" alt="LinkedIn Link" style="width:50px;height:50px;border:0;">
+            </a>
+        </center>
+
+
+
+        <script>
+            function openPage() {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                }
+            }
+        </script>
+    </body>
+</html>

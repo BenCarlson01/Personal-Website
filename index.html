@@ -6,92 +6,98 @@
         <link rel="stylesheet" href="styles.css">
         <style>
             body {
-                background-image: url("/images/cloud.jpg");
+                background-image: url("/images/modern1.jpg");
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-attachment: fixed;
                 background-size: cover;
             }
             .tablink {
-                background-color: #555;
-                color: white;
-                float: left;
+                background-color: inherit;
+                color: black;
+                float: right;
                 border: none;
                 outline: none;
                 cursor: pointer;
                 padding: 14px 16px;
+                transition: 0.3s;
                 font-size: 17px;
-                width: 25%;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
             }
 
             /* Style the tab content */
             .tabcontent {
-                color: white;
+                color: black;
                 display: none;
-                padding: 50px;
-                text-align: center;
+                padding: 10px;
+                text-align: left;
             }
 
-            #London {background-color:red;}
-            #Paris {background-color:green;}
-            #Tokyo {background-color:blue;}
-            #Oslo {background-color:orange;}
-
-            /* Split the screen in half */
-            .split {
-              height: 100%;
-              width: 50%;
-              position: fixed;
-              z-index: 1;
-              top: 0;
-              overflow-x: hidden;
-              padding-top: 20px;
-            }
-
-            /* Control the left side */
-            .left {
-              left: 0;
-            }
-
-            /* Control the right side */
-            .right {
-              right: 0;
-            }
-
-            /* If you want the content centered horizontally and vertically */
-            .centered {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              text-align: center;
-            }
-
-            /* Style the image inside the centered container, if needed */
-            .centered img {
-              width: 150px;
-              /* border-radius: 50%; */
-            }
         </style>
     </head>
     <body>      
-        <button class="tablink" onclick="openPage()" id="defaultOpen">London</button>
-        <button class="tablink" onclick="openPage()">Paris</button>
-        <button class="tablink" onclick="openPage()">Tokyo</button>
-        <button class="tablink" onclick="openPage()">Oslo</button>
+        <button class="tablink" onclick="openPage('Contact', this, '#80808050')">Personal Info</button>
+        <button class="tablink" onclick="openPage('Resume', this, '#80808050')">Resume</button>
+        <button class="tablink" onclick="openPage('Projects', this, '#80808050')">Projects</button>
+        <button id="home_button" class="tablink" onclick="openPage('Home', this, '#80808050')">Home</button>
 
-        <div style="width: 100%;">
-               <div style="float:left; width: 50%">
-                    <img src="/images/personal_picture.jpeg" alt="Me!" style="width:336px;height:504px;border:0;">
-               </div>
-               <div style="float:left;">
-                    Hi! This is the location of my future personal website! <br>
-                    It's a current work in progress, but check back in a week or so and it should be partially up!
-               </div>
+        <br>
+        <br>
+        <br>
+        <center>
+            Hi! Thank you for being interested in me and visiting my website! <br>
+            It's currently a work in progress, but I am doing my best to update it, so please check back regularly!
+        </center>
+
+        <div id="Home" class="tabcontent">
+            <div style="width: 100%;">
+                    <div style="float:left;">
+                        <img src="/images/personal_circle.png" alt="Me!" style="width:366px;height:389px;border:0;">
+                    </div>
+                    <div style="float:all;">
+                        [WIP]
+                        <p>Hi! My name is Benjamin Carlson and I am currently a junior at UC Berkeley studying Electrical Engineering and Computer Science. However, I am focusing my studies on computer science because I really enjoy computer science and programming. I spend a lot of my time programming personal projects and class assignments, and practicing my knowledge with coding challenges. I personally don't know which areas of CS I want to focus in because there are so many interesting topics. However, I enjoy thinking through difficult CS problems and finding efficient algorithms, so I believe backend programming would be ideal for me.</p>
+                        <p>Other than studying and programming, I enjoy teaching and dancing! Though I haven't spent much time teaching, I found that I love working with students and using my experience to help others succeed in computer science as well. And as for dancing, it is a fun way to relieve stress and get exercise! I have been a part of AFX dance for almost 2 years now, and I really enjoy everything about the experience and the community.</p>
+                    </div>
+            </div>
+            <div style="clear:both"></div>
         </div>
-        <div style="clear:both"></div>
+
+        <div id="Projects" class="tabcontent">
+          <h3>Memer</h3>
+          [WIP]
+          <p>This project is my first attempt at making a big mobile application. This idea is an interesting twist on regular mobile dating apps; instead of another application for judging others of the prefered gender, Memer allows people to give their opinion on others memes. It is a free application that allows anyone to upload memes and see what others think of their memes.</p>
+          <p>Currently, this is all my application features. I have many ideas in mind for improving the application and will continue to work on it, but as a busy college student, I can only put so much time into developing my app.</p>
+
+          <h3>Bestris</h3>
+          [WIP]
+          <p>Bestris is my personal take on the classic game of Tetris. I began developing Bestris because I disliked how the only available Tetris games either require countless hours of play to unlock features and are swarmed with ads or are not up to the standard of gameplay that I seek. The goal of Bestris is to be an easy accessible and free to play Tetris game. While this project is still a work in progress, it features all of the basic functionality of Tetris and can be enjoyed by casual Tetris players.</p>
+        </div>
+
+        <div id="Resume" class="tabcontent">
+            <center>
+                <embed id="resume" src="files/resume.pdf"/>
+            </center>
+        </div>
+
+        <div id="Contact" class="tabcontent">
+            <br>
+            Email me at <a href="mailto:bcarlson@berkeley.edu" target="_blank">bcarlson@berkeley.edu</a>! <br>
+            Check out my GitHub! <a href="https://www.github.com/bencarlson01" target="_blank">www.github.com/bencarlson01</a> <br>
+            Check me out on LinkedIn! <a href="https://www.linkedin.com/in/bencarlson01" target="_blank">www.linkedin.com/in/bencarlson01</a> <br> 
+        </div>
 
         <center>
+            Check me out on GitHub and LinkedIn!<br>
             <a href="https://www.github.com/bencarlson01">
                 <img src="/images/github.png" alt="GitHub Link" style="width:50px;height:50px;border:0;">
             </a> 
@@ -103,7 +109,7 @@
 
 
         <script>
-            function openPage() {
+            function openPage(cityName,elmnt,color) {
                 var i, tabcontent, tablinks;
                 tabcontent = document.getElementsByClassName("tabcontent");
                 for (i = 0; i < tabcontent.length; i++) {
@@ -113,7 +119,13 @@
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].style.backgroundColor = "";
                 }
+                document.getElementById(cityName).style.display = "block";
+                elmnt.style.backgroundColor = color;
             }
+            openPage('Home', document.getElementById('home_button'), '#80808050');
+            var width  = document.documentElement.clientWidth * 0.8;
+            document.getElementById("resume").width = width;
+            document.getElementById("resume").height = width * 1.294;
         </script>
     </body>
 </html>
